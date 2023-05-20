@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const date = require(__dirname + '/date.js');
+const port = process.env.PORT || 3000
 
 var items = [];
 var workItems = [];
@@ -11,8 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public")); //be default express can only serve server.js and views folder 
 //all other files have to be declared as static in a specific folder. The folders in public can be access directly as folder/filename
 
-app.listen(3000, function () {
-    console.log("Server running on port 3000");
+app.listen(port, function () {
+    console.log("Server running on port " + port);
 });
 
 
